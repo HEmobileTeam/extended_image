@@ -1,13 +1,13 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:preload_page_view/preload_page_view.dart';
+import 'package:preload_page_view/preload_page_view.dart' as preloadpage;
 
 ///
 ///  extended_image_view.dart
 ///  create by zmtzawqlp on 2019/4/3
 ///
-final PreloadPageController _defaultPageController = PreloadPageController();
+final preloadpage.PreloadPageController _defaultPageController = preloadpage.PreloadPageController();
 //const PageScrollPhysics _kPagePhysics = PageScrollPhysics();
 const ScrollPhysics _defaultScrollPhysics = NeverScrollableScrollPhysics();
 
@@ -32,7 +32,7 @@ class ExtendedImageGesturePageView extends StatefulWidget {
     Key key,
     this.scrollDirection = Axis.horizontal,
     this.reverse = false,
-    PreloadPageController controller,
+    preloadpage.PreloadPageController controller,
     ScrollPhysics physics,
     this.pageSnapping = true,
     this.onPageChanged,
@@ -65,7 +65,7 @@ class ExtendedImageGesturePageView extends StatefulWidget {
     Key key,
     this.scrollDirection = Axis.horizontal,
     this.reverse = false,
-    PreloadPageController controller,
+    preloadpage.PreloadPageController controller,
     ScrollPhysics physics,
     this.pageSnapping = true,
     this.onPageChanged,
@@ -90,10 +90,11 @@ class ExtendedImageGesturePageView extends StatefulWidget {
     Key key,
     this.scrollDirection = Axis.horizontal,
     this.reverse = false,
-    PreloadPageController controller,
+    preloadpage.PreloadPageController controller,
     //this.physics,
     this.pageSnapping = true,
     this.onPageChanged,
+    this.preloadPagesCount = 1,
     CanMovePage canMovePage,
     CanScrollPage canScrollPage,
     @required this.childrenDelegate,
@@ -131,7 +132,7 @@ class ExtendedImageGesturePageView extends StatefulWidget {
 
   /// An object that can be used to control the position to which this page
   /// view is scrolled.
-  final PreloadPageController controller;
+  final preloadpage.PreloadPageController controller;
 
   /// How the page view should respond to user input.
   ///
@@ -172,7 +173,7 @@ class ExtendedImageGesturePageViewState
       const <Type, GestureRecognizerFactory>{};
   GestureAnimation _gestureAnimation;
   ScrollPosition get position => pageController.position;
-  PreloadPageController get pageController => widget.controller;
+  preloadpage.PreloadPageController get pageController => widget.controller;
 
   ExtendedImageGestureState extendedImageGestureState;
   @override
@@ -268,7 +269,7 @@ class ExtendedImageGesturePageViewState
 //      finallyPhysics = finallyPhysics.applyTo(widget.physics);
 //    }
 
-    Widget result = PreloadPageView.custom(
+    Widget result = preloadpage.PreloadPageView.custom(
       scrollDirection: widget.scrollDirection,
       reverse: widget.reverse,
       controller: widget.controller,
