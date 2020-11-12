@@ -71,7 +71,6 @@ class ExtendedImageGesturePageView extends StatefulWidget {
     this.preloadPagesCount = 1,
     @required IndexedWidgetBuilder itemBuilder,
     int itemCount,
-    this.preloadPagesCount = 1,
     CanMovePage canMovePage,
     CanScrollPage canScrollPage,
   })  : controller = controller ?? _defaultPageController,
