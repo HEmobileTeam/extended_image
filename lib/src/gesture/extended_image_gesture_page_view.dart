@@ -64,7 +64,7 @@ class ExtendedImageGesturePageView extends StatefulWidget {
     Key key,
     this.scrollDirection = Axis.horizontal,
     this.reverse = false,
-    PageController controller,
+    PreloadPageController controller,
     ScrollPhysics physics,
     this.pageSnapping = true,
     this.onPageChanged,
