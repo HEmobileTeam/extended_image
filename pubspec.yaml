@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   extended_image_library: ^0.3.0
+  preload_page_view: ^0.1.4
   meta: ^1.1.8
 dev_dependencies:
   flutter_test:
